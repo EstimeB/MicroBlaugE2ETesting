@@ -1,15 +1,12 @@
-package stepimplementations;
+package com.revature.stepsImplementation;
 
-;
+
+import com.revature.runners.ProfileRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import runners.ProfileRunner;
-
-
-import static runners.ProfileRunner.driver;
 
 public class ProfileSteps {
     //Scenario 1
@@ -22,14 +19,14 @@ public class ProfileSteps {
         usernameInput.clear();
         usernameInput.sendKeys("Hue Jass");
         Thread.sleep(1000);
-        WebElement passwordInput = driver.findElement(By.xpath("//input[@id='password']"));
+        WebElement passwordInput = ProfileRunner.driver.findElement(By.xpath("//input[@id='password']"));
         passwordInput.click();
         passwordInput.sendKeys("lucky7");
         Thread.sleep(1000);
-        WebElement submitBtn = driver.findElement(By.xpath("//button[@id='login-btn']"));
+        WebElement submitBtn = ProfileRunner.driver.findElement(By.xpath("//button[@id='login-btn']"));
         submitBtn.click();
         Thread.sleep(3000);
-        WebElement profileTab = driver.findElement(By.xpath("//a[normalize-space()='Profile']"));
+        WebElement profileTab = ProfileRunner.driver.findElement(By.xpath("//a[normalize-space()='Profile']"));
         profileTab.click();
         Thread.sleep(1000);
     }
@@ -85,10 +82,4 @@ public class ProfileSteps {
     public void an_alert_should_pop_up_and_saying_please_complete_all_fields() {
         // Write code here that turns the phrase above into concrete actions
     }
-
-
-
-
-
-
 }

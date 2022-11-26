@@ -1,4 +1,4 @@
-package pages;
+package com.revature.pages;
 
 public class ProfilePage {
 }

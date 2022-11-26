@@ -1,0 +1,8 @@
+.env
+.idea/
+target/
+.DS_Store
+.jar
+.class
+dotenv.jar
+
