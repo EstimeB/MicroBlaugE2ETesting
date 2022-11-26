@@ -1,8 +1,10 @@
 package com.revature.stepImplementation;
 
+import com.revature.runners.Runner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class LoginPositiveSteps {
 
@@ -10,38 +12,31 @@ public class LoginPositiveSteps {
 
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Runner.driver.get("http://localhost:63342/MicroBlaug/src/main/webApp/html/login-signup.html");
     }
     @When("The user clicks the signup button")
     public void the_user_clicks_the_signup_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Runner.loginPage.signupButton.click();
     }
-    @When("The user types {string} into the username input")
-    public void the_user_types_into_the_username_input(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("The user types {string} into the signup username input")
+    public void the_user_types_into_the_signup_username_input(String string) {
+        Runner.signupPage.usernameInput.sendKeys("newUser1");
     }
-    @When("The user types {string} into the email input")
-    public void the_user_types_into_the_email_input(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("The user types {string} into the signup email input")
+    public void the_user_types_into_the_signup_email_input(String string) {
+        Runner.signupPage.emailInput.sendKeys("newUser1@aol.com");
     }
-    @When("The user types {string} into the password input")
-    public void the_user_types_into_the_password_input(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("The user types {string} into the signup password input")
+    public void the_user_types_into_the_signup_password_input(String string) {
+        Runner.signupPage.passwordInput.sendKeys("pass1");
     }
-    @When("The user types {string} into the confirm password")
-    public void the_user_types_into_the_confirm_password(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("The user types {string} into the signup confirm password")
+    public void the_user_types_into_the_signup_confirm_password(String string) {
+        Runner.signupPage.confirmPasswordInput.sendKeys("pass1");
     }
     @When("The user clicks the Sign Up button")
     public void the_user_clicks_the_sign_up_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Runner.signupPage.signupButton.click();
     }
     @Then("The user should be on their Profile page")
     public void the_user_should_be_on_their_profile_page() {
@@ -50,11 +45,17 @@ public class LoginPositiveSteps {
     }
 
 //    Login steps
-
+    @When("The user types {string} into the username input")
+    public void the_user_types_into_the_username_input(String string) {
+        Runner.loginPage.usernameInput.sendKeys("freebird");
+}
+    @When("The user types {string} into the password input")
+    public void the_user_types_into_the_password_input(String string) {
+        Runner.loginPage.passwordInput.sendKeys("freebird123");
+    }
     @When("The user clicks the Login button")
     public void the_user_clicks_the_login_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Runner.loginPage.loginButton.click();
     }
     @Then("the user should be on the Home page")
     public void the_user_should_be_on_the_home_page() {
