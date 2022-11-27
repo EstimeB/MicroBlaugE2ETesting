@@ -17,6 +17,10 @@ public class LoginPage {
 
     @FindBy(xpath="//*[@id='signup-btn']")
     public WebElement signupButton;
+
+    @FindBy(xpath="//a[contains(text(),'Logout')]")
+    public WebElement logoutButton;
+
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }

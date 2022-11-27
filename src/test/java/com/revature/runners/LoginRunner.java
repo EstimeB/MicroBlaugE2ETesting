@@ -3,6 +3,7 @@ package com.revature.runners;
 
 import com.revature.pages.LoginPage;
 import com.revature.pages.SignupPage;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-@CucumberOptions(features="classpath:Features", glue = "com.revature.stepImplementation")
-public class LoginRunner {
+@CucumberOptions(features="classpath:features", glue = "com.revature.stepImplementation")
+public class LoginRunner extends AbstractTestNGCucumberTests {
 
     public static WebDriver driver;
 
