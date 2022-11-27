@@ -8,9 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.Assert;
 import java.time.Duration;
-
 
 public class LoginNegativeSteps {
 
@@ -19,6 +18,7 @@ public class LoginNegativeSteps {
 
     WebDriver driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
     @When("The user types freebird into the username input")
     public void the_user_types_freebird_into_the_username_input() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
@@ -51,8 +51,9 @@ public class LoginNegativeSteps {
     }
     @Then("The user should see an alert saying Invalid Login Information")
     public void the_user_should_see_an_alert_saying_invalid_login_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        wait.until(ExpectedConditions.alertIsPresent());
+        String alertMessage = LoginRunner.driver.switchTo().alert().getText();
+        Assert.assertEquals(alertMessage, "Invalid Login Information");
     }
 }
 
