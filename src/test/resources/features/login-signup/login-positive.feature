@@ -7,6 +7,7 @@ Feature: Successful Signup Login and Logout
     And The user types "newUser1@aol.com" into the signup email input
     And The user types "pass1" into the signup password input
     And The user types "pass1" into the signup confirm password
+
     And The user clicks the Click to Sign Up button
     Then The user should be on their Profile page
 

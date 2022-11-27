@@ -50,6 +50,7 @@ public class LoginPositiveSteps {
     }
     @When("The user clicks the Click to Sign Up button")
     public void the_user_clicks_the_Click_to_sign_up_button() {
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='signup-submit-btn']")));
         LoginRunner.signupPage.signupButton.click();
     }
@@ -61,6 +62,7 @@ public class LoginPositiveSteps {
     }
 
     //    Login steps
+
 
     @When("The user types {string} into the username input")
     public void the_user_types_into_the_username_input(String string) {
