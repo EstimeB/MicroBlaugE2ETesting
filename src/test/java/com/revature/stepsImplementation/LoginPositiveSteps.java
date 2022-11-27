@@ -106,6 +106,17 @@ public class LoginPositiveSteps {
     public void the_user_clicks_on_the_dashboard_link() {
         LoginRunner.driver.findElement(By.xpath("//a[contains(text(),'Dashboard')]")).click();
     }
+    @Then("The user should be guided to the login page")
+    public void the_user_should_be_guided_to_the_login_page() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("The user clicks on the dashboard link")
+    public void the_user_clicks_on_the_dashboard_link() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+
+    }
     @Then("The dashboard should be empty")
     public void the_dashboard_should_be_empty() {
         // Write code here that turns the phrase above into concrete actions

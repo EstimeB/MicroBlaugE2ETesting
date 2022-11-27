@@ -11,10 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+
 public class LoginNegativeSteps {
 
 //    Incorrect credentials: incorrect username/correct password, correct username/incorrect password,
 //    No username/correct password, correct username/no password, no username/no password
+
     WebDriver driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     @When("The user types freebird into the username input")
@@ -47,14 +49,10 @@ public class LoginNegativeSteps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='password']")));
         LoginRunner.loginPage.passwordInput.sendKeys("");
     }
-    @When("The user clicks the Sign in button")
-    public void the_user_clicks_the_sign_in_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
     @Then("The user should see an alert saying Invalid Login Information")
     public void the_user_should_see_an_alert_saying_invalid_login_information() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 }
+

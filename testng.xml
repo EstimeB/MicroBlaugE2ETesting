@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E2E">
+    <test name="E2E-Testing">
+        <classes>
+            <class name="com.revature.runners.PostRunner"></class>
+        </classes>
+    </test>
+</suite>
