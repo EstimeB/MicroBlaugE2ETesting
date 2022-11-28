@@ -16,6 +16,9 @@ public class PostPage {
     @FindBy(xpath = "//button[@id='login-btn']")
     public WebElement loginBtn;
 
+    @FindBy(xpath = "//a[text()='Dashboard']")
+    public WebElement dashboardLink;
+
     @FindBy(xpath = "//button[@id='cnBtn']")
     public WebElement createPostBtn;
 
@@ -30,6 +33,15 @@ public class PostPage {
 
     @FindBy(xpath = "//button[@id='createPostBtn']")
     public WebElement submitPostBtn;
+
+    @FindBy(xpath = "//a[text()='Home']")
+    public WebElement homeLink;
+
+    @FindBy(xpath = "//div[@id='uPostDiv']/h3")
+    public WebElement dashboardPosts;
+
+    @FindBy(xpath = "//div[@id='container']/table//h5")
+    public WebElement homePagePosts;
 
     @FindBy(xpath = "//div[@id='innerContainer']/div[last()]/div/img[@id='open-modal1']")
     public WebElement updateIcon;

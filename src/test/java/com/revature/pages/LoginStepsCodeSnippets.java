@@ -4,12 +4,12 @@ import com.revature.runners.PostRunner;
 
 public class LoginStepsCodeSnippets {
 
-    public static String loginPageUrl = "http://localhost:63342/MicroBlaug/src/main/webApp/html/login-signup.html";
+    public static String loginPageUrl = "http://localhost:63342/MicroBlaug/index.html";
     public LoginStepsCodeSnippets() {}
     public void postLogin() {
         PostRunner.driver.get(LoginStepsCodeSnippets.loginPageUrl);
-        PostRunner.postPage.usernameInput.sendKeys("monday21");
-        PostRunner.postPage.passwordInput.sendKeys("monday");
+        PostRunner.postPage.usernameInput.sendKeys("ptest");
+        PostRunner.postPage.passwordInput.sendKeys("postfeaturetest1");
         PostRunner.postPage.loginBtn.click();
     }
 }
