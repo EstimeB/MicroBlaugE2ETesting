@@ -18,11 +18,12 @@ import java.util.NoSuchElementException;
 import static com.revature.runners.ProfileRunner.driver;
 
 public class ProfileSteps {
+
     //Scenario 1
     @Given("The user logs in.")
     public void theUserLogsIn() throws InterruptedException {
         ProfileRunner.driver.get("http://localhost:63342/MicroBlaug/src/main/webApp/html/login-signup.html");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         WebElement usernameInput = ProfileRunner.driver.findElement(By.xpath("//input[@id='username']"));
         usernameInput.click();
         usernameInput.clear();
