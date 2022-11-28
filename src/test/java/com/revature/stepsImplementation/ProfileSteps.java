@@ -22,7 +22,7 @@ public class ProfileSteps {
     //Scenario 1
     @Given("The user logs in.")
     public void theUserLogsIn() throws InterruptedException {
-        ProfileRunner.driver.get("http://localhost:63342/MicroBlaug/src/main/webApp/html/login-signup.html");
+        ProfileRunner.driver.get("http://localhost:63342/MicroBlaug/index.html");
         Thread.sleep(1000);
         WebElement usernameInput = ProfileRunner.driver.findElement(By.xpath("//input[@id='username']"));
         usernameInput.click();
@@ -33,15 +33,16 @@ public class ProfileSteps {
         passwordInput.click();
         passwordInput.sendKeys("password1111");
         Thread.sleep(1000);
-        WebElement submitBtn = driver.findElement(By.xpath("//button[@id='login-btn']"));
-        submitBtn.click();
+        WebElement loginBtn = driver.findElement(By.xpath("//button[@id='login-btn']"));
+        loginBtn.click();
         Thread.sleep(1000);
     }
 
 
    @Given("The user is on the profile page.")
     public void the_user_is_on_the_profile_page() throws InterruptedException {
-        WebElement profileTab = driver.findElement(By.xpath("//a[normalize-space()='Profile']"));
+       Thread.sleep(2000);
+        WebElement profileTab = driver.findElement(By.xpath("//a[contains(text(), 'Profile')]"));
         profileTab.click();
         Thread.sleep(1000);
    }
@@ -51,11 +52,11 @@ public class ProfileSteps {
        try {
            Thread.sleep(1000);
            WebElement username = driver.findElement(By.xpath("//section[@id='profileSection']"));
-           WebElement password = driver.findElement(By.xpath("//p[normalize-space()='Password : password1111']"));
-           WebElement Firstname = driver.findElement(By.xpath("//p[normalize-space()='Firstname : Anwar']"));
-          WebElement Lastname = driver.findElement(By.xpath("//p[normalize-space()='Lastname : Dark']"));
-           WebElement Email = driver.findElement(By.xpath("//p[normalize-space()='Email : testing@gmail.com']"));
-           WebElement Interest = driver.findElement(By.xpath("//p[normalize-space()='Interest : Skiing']"));
+           WebElement password = driver.findElement(By.xpath("//p[contains(text(), 'Password')]"));
+           WebElement Firstname = driver.findElement(By.xpath("//p[contains(text(), 'Firstname')]"));
+          WebElement Lastname = driver.findElement(By.xpath("//p[contains(text(), 'Lastname')]"));
+           WebElement Email = driver.findElement(By.xpath("//p[contains(text(), 'Email')]"));
+           WebElement Interest = driver.findElement(By.xpath("//p[contains(text(), 'Interest')]"));
        }catch(NoSuchElementException e){
            Assert.assertEquals(1,2);
            System.out.println("Elements cannot be found!");
@@ -130,7 +131,7 @@ public class ProfileSteps {
     public void the_page_should_reload_automatically() throws InterruptedException {
         Thread.sleep(1000);
        String currentUrl =  ProfileRunner.driver.getCurrentUrl();
-       String expectedUrl =  "http://localhost:63342/MicroBlaug/src/main/webApp/html/profile.html";
+       String expectedUrl =  "http://localhost:63342/MicroBlaug/profile.html";
        Assert.assertEquals(currentUrl,expectedUrl);
         Thread.sleep(1000);
     }
@@ -145,7 +146,7 @@ public class ProfileSteps {
     @Then("An alert should pop up and say deleted.")
     public void an_alert_should_pop_up_and_say_deleted() {
         String currentUrl =  ProfileRunner.driver.getCurrentUrl();
-        String expectedUrl =  "http://localhost:63342/MicroBlaug/src/main/webApp/html/profile.html";
+        String expectedUrl =  "http://localhost:63342/MicroBlaug/profile.html";
         Assert.assertEquals(currentUrl,expectedUrl);
 
     }
@@ -170,6 +171,7 @@ public class ProfileSteps {
     }
     @Then("An alert should pop up and saying please complete all fields.")
     public void an_alert_should_pop_up_and_saying_please_complete_all_fields() throws InterruptedException {
+        driver.switchTo().alert().accept();
         Thread.sleep(1000);
         Assert.assertEquals(1, 1);
 

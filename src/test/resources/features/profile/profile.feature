@@ -1,4 +1,4 @@
-@Profile
+
 Feature: Profile
 
 
@@ -23,7 +23,7 @@ Scenario: A user when navigating to the profile page can READ their correct info
     When   The user presses delete.
     Then   An alert should pop up and say deleted.
 
-
+  @Profile
   Scenario: A user is on their page they should not be able to leave a field blank if they wish to edit their profile.
     Given The user logs in.
     Given  The user is on the profile page.
