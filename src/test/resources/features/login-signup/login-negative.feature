@@ -4,7 +4,7 @@ Feature: Unsuccessful Login
     Given The user is on the login page
     When The user types <username> into the username input
     And The user types <password> into the password input
-    And The user clicks the Sign in button
+    And The user clicks the Login button
     Then The user should see an alert saying Invalid Login Information
 
   Examples:
@@ -14,7 +14,7 @@ Feature: Unsuccessful Login
     |           | pass1234 |
     | freebird  |          |
     |           |          |
-
+#
 #  Scenario: Login Incorrect Username Correct Password
 #    Given The user is on the login page
 #    When The user types "greebird" into the username input
