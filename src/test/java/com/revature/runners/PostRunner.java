@@ -21,6 +21,12 @@ public class PostRunner extends AbstractTestNGCucumberTests {
     public static WebDriverWait wait;
     public static PostPage postPage;
     public static LoginStepsCodeSnippets loginStepsCodeSnippets;
+    public static String expectedResult;
+    public static String actualResult;
+    public static String expectedR;
+    public static String actualR;
+    public static String postId;
+    public static boolean actualBoolRes;
 
     //methods bellow are used to reduce redundancy
     @BeforeMethod
