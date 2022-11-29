@@ -9,11 +9,11 @@ Feature: Comments Negative
     This is the best Post I have come across today!
     """
     Then The user clicks the save button
-    Then An Alert says "You must sign up to use comments features"
+    Then An Alert says "You must login or sign up to create comments"
 
   Scenario: Can not delete a Comment
     When The user presses on the trash can icon next to a comment on a post
-    Then An Alert says "You must sign up to use comments features"
+    Then An Alert says "You must login or sign up to create comments"
     Then The user confirms by pressing ok
 
   Scenario: Can not update a Comment
@@ -23,5 +23,5 @@ Feature: Comments Negative
     This is an updated comment
     """
     Then The user presses on the update icon next to the comment on a post
-    Then An Alert says "You must sign up to use comments features"
+    Then An Alert says "You must login or sign up to create comments"
     Then The user confirms by pressing ok

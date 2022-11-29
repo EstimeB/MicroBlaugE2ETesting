@@ -10,7 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-@CucumberOptions(features="classpath:features/login-signup", glue = "com.revature.stepsImplementation")
+@CucumberOptions(features="classpath:features", glue = "com.revature.stepsImplementation")
+
 public class LoginRunner extends AbstractTestNGCucumberTests {
 
     public static WebDriver driver;
