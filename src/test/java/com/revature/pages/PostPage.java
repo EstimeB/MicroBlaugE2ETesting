@@ -37,12 +37,6 @@ public class PostPage {
     @FindBy(xpath = "//a[text()='Home']")
     public WebElement homeLink;
 
-    @FindBy(xpath = "//div[@id='uPostDiv']/h3")
-    public WebElement dashboardPosts;
-
-    @FindBy(xpath = "//div[@id='container']/table//h5")
-    public WebElement homePagePosts;
-
     @FindBy(xpath = "//div[@id='innerContainer']/div[last()]/div/img[@id='open-modal1']")
     public WebElement updateIcon;
 
@@ -67,7 +61,7 @@ public class PostPage {
     @FindBy(xpath = "//div[@id='innerContainer']/div[last()]/div/img[@id='open-modal']")
     public WebElement deleteIcon;
 
-    @FindBy(xpath = "//div[@id='modal1']/div[@class='modalSecondDiv']")
+    @FindBy(xpath = "//div[@id='modal1']")
     public WebElement deletePostModal;
 
     @FindBy(xpath = "//button[@id='conDel']")
