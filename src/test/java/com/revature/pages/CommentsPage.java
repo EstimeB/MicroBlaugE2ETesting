@@ -7,19 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CommentsPage {
 
-    @FindBy(xpath="//*[@id=\"write-comment-4\"]")
+    @FindBy(xpath="//input[@id='write-comment-4']")
     public WebElement newCommentMessage;
 
-    @FindBy(xpath="//*[@id=\"save-comment-4\"]")
+    @FindBy(xpath="//button[@id='save-comment-4']")
     public WebElement saveCommentButton;
 
-    @FindBy(xpath="//*[@id=\"update-comment-4\"]")
+    @FindBy(xpath="//tbody/tr[@id='comment-container-4']/div[2]/div[2]/textarea[1]")
     public WebElement updateCommentInput;
 
     @FindBy(xpath="//*[@id=\"trash-icon-4\"]")
     public WebElement deleteCommentIcon;
 
-    @FindBy(xpath="//*[@id=\"edit-icon-4\"]")
+    @FindBy(xpath="//tbody/tr[@id='comment-container-4']/div[2]/div[5]/a[1]/img[1]")
     public WebElement editCommentIcon;
 
     @FindBy(xpath="//*[@id=\"cancel-icon-4\"]")
@@ -42,9 +42,9 @@ public class CommentsPage {
 
 
 
-    public static String Home_URL = "http://localhost:63341/MicroBlaug/home.html";
+    public static String Home_URL = "http://localhost:63342/MicroBlaug/home.html";
 
-    public static String Login_URL = "http://localhost:63341/MicroBlaug/index.html";
+    public static String Login_URL = "http://localhost:63342/MicroBlaug/index.html";
     public CommentsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
