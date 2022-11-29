@@ -46,7 +46,10 @@ public class PostPage {
     @FindBy(xpath = "//div[@id='innerContainer']/div[last()]/div/img[@id='open-modal1']")
     public WebElement updateIcon;
 
-    @FindBy(xpath = "//div[@id='modal2']/div[@class='modalSecondDiv']")
+    @FindBy(xpath = "//div[@class='modalSecondDiv']//h3[@id='pstid']")
+    public WebElement upostId;
+
+    @FindBy(xpath = "//section[@id='section']/div[2]")
     public WebElement updatePostModal;
 
     @FindBy(xpath = "//textarea[@id='pstTitle']")
